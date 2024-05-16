@@ -12,8 +12,6 @@ window.onload = function () {
 
     function crearBarrasInfo() {
         if (!mainContenedorInfo) {
-            let blank1 = document.createElement('div');
-            blank1.classList.add('blank1');
 
             mainContenedorInfo = document.createElement('div');
             mainContenedorInfo.classList.add('mainContenedorInfo');
@@ -68,9 +66,7 @@ window.onload = function () {
             mainContenedorInfo.appendChild(contenedorInfo);
             mainContenedorInfo.appendChild(resetBoton);
             
-            
-            document.body.appendChild(blank1);
-            
+                        
         }
     }
     
