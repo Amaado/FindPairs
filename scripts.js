@@ -268,43 +268,45 @@ window.onload = function () {
         blank2.classList.add('blank2');
         blank2.style.userSelect = "none";
 
-
-        let contenedorInfo2 = document.createElement('div');
-        contenedorInfo2.classList.add('contenedorInfo2');
-        contenedorInfo2.style.userSelect = "none";
-        puntuacionTexto2.textContent = localStorage.getItem('puntuación');
-        intentosTexto2.textContent = localStorage.getItem('intentos');
-
-        let ultimaPartidaContenedor = document.createElement('div');
-        ultimaPartidaContenedor.classList.add('ultimaPartidaContenedor');
-        ultimaPartidaContenedor.style.userSelect = "none";
-
-        let ultimaPartidaTexto = document.createElement('div');
-        ultimaPartidaTexto.textContent = "Last match";
-        ultimaPartidaTexto.classList.add('ultimaPartidaTexto');
-        ultimaPartidaTexto.style.userSelect = "none";
+        if(localStorage.getItem('puntuación') != null && localStorage.getItem('intentos') != null){
+            let contenedorInfo2 = document.createElement('div');
+            contenedorInfo2.classList.add('contenedorInfo2');
+            contenedorInfo2.style.userSelect = "none";
+            puntuacionTexto2.textContent = localStorage.getItem('puntuación');
+            intentosTexto2.textContent = localStorage.getItem('intentos');
+    
+            let ultimaPartidaContenedor = document.createElement('div');
+            ultimaPartidaContenedor.classList.add('ultimaPartidaContenedor');
+            ultimaPartidaContenedor.style.userSelect = "none";
+    
+            let ultimaPartidaTexto = document.createElement('div');
+            ultimaPartidaTexto.textContent = "Last match";
+            ultimaPartidaTexto.classList.add('ultimaPartidaTexto');
+            ultimaPartidaTexto.style.userSelect = "none";
+            
+    
+            
+            let ultimaPartidaInfo = document.createElement('div');
+            ultimaPartidaInfo.classList.add('ultimaPartidaInfo');
+            ultimaPartidaInfo.style.userSelect = "none";
+    
+            ultimaPartidaInfo.appendChild(puntuacionTexto2);
+            ultimaPartidaInfo.appendChild(puntuacionImg2);
+            ultimaPartidaInfo.appendChild(document.createTextNode('   '));
+            ultimaPartidaInfo.appendChild(intentosTexto2);
+            ultimaPartidaInfo.appendChild(intentosImg2);
+    
+            contenedorInfo2.appendChild(ultimaPartidaTexto);
+            contenedorInfo2.appendChild(ultimaPartidaInfo);
+    
+            mainContenedorInfo2 = document.createElement('div');
+            mainContenedorInfo2.classList.add('mainContenedorInfo2');
+    
+            mainContenedorInfo2.appendChild(contenedorInfo2);
+            mainContenedorInfo2.appendChild(blank2);
+            document.body.appendChild(mainContenedorInfo2);
+        }
         
-
-        
-        let ultimaPartidaInfo = document.createElement('div');
-        ultimaPartidaInfo.classList.add('ultimaPartidaInfo');
-        ultimaPartidaInfo.style.userSelect = "none";
-
-        ultimaPartidaInfo.appendChild(puntuacionTexto2);
-        ultimaPartidaInfo.appendChild(puntuacionImg2);
-        ultimaPartidaInfo.appendChild(document.createTextNode('   '));
-        ultimaPartidaInfo.appendChild(intentosTexto2);
-        ultimaPartidaInfo.appendChild(intentosImg2);
-
-        contenedorInfo2.appendChild(ultimaPartidaTexto);
-        contenedorInfo2.appendChild(ultimaPartidaInfo);
-
-        mainContenedorInfo2 = document.createElement('div');
-        mainContenedorInfo2.classList.add('mainContenedorInfo2');
-
-        mainContenedorInfo2.appendChild(contenedorInfo2);
-        mainContenedorInfo2.appendChild(blank2);
-        document.body.appendChild(mainContenedorInfo2);
     }
     
 };
